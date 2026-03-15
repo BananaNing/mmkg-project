@@ -1,5 +1,5 @@
 # ==========================================
-# Member A: Text-only ComplEx (Seed 1)
+# Member A: Text-only ComplEx
 # ==========================================
 system:
   seed: 1
@@ -15,23 +15,23 @@ dataset:
 
 model:
   name: "text_complex"
-  embedding_dim: 256
+  embedding_dim: 512
   num_relations: 500
   bert_cache_path: "data/cache/openbg500/entity_bert_emb.pt"
   normalize_bert: true
 
 evaluation:
-  dev_eval_limit: 500
+  dev_eval_limit: 5000
   chunk_size: 1024
-  query_batch_size: 16
+  query_batch_size: 32
 
 training:
   lr: 0.001
   batch_size: 2048
   neg_ratio: 10
-  epochs: 100
+  epochs: 200
   eval_every: 5
-  early_stop_patience: 15
+  early_stop_patience: 10
 
 output:
-  exp_name: "memberA_complex_v3/seed1"
+  exp_name: "memberA_complex_v4"
